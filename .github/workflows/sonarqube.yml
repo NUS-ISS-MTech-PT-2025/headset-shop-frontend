@@ -2,8 +2,7 @@ name: Build and Analyze with SonarQube
 
 on:
   push:
-    branches:
-      - main
+    branches: [ develop ]
 
 jobs:
   build:
