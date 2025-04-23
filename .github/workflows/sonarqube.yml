@@ -1,0 +1,44 @@
+name: Build and Analyze with SonarQube
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build and Analyze
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0'
+
+      - name: Install dependencies
+        run: dotnet restore headset-shop-frontend.sln
+
+      - name: Test and collect coverage
+        run: dotnet test HeadsetShopFrontend.Test.Unit/HeadsetShopFrontend.Test.Unit.csproj --configuration Release /p:CollectCoverage=true /p:CoverletOutput=TestResults/ /p:CoverletOutputFormat=opencover
+
+      - name: Install SonarScanner
+        run: dotnet tool install --global dotnet-sonarscanner
+
+      - name: Begin SonarQube analysis
+        run: |
+          dotnet sonarscanner begin \
+            /k:"headset-shop-frontend" \
+            /o:"nus-iss-mtech-pt-2025" \
+            /d:sonar.login="${{ secrets.SONARQUBE_TOKEN }}" \
+            /d:sonar.host.url="https://sonarcloud.io" \
+            /d:sonar.cs.opencover.reportsPaths=**/TestResults/coverage.opencover.xml
+
+      - name: Rebuild (required after begin)
+        run: dotnet build --no-restore --configuration Release
+
+      - name: End SonarQube analysis
+        run: dotnet sonarscanner end /d:sonar.login="${{ secrets.SONARQUBE_TOKEN }}"
