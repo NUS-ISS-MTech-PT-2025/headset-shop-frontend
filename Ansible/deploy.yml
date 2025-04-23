@@ -30,4 +30,4 @@
           - "80:5000"
         env:
           ASPNETCORE_ENVIRONMENT: "Production"
-          HTTP_PORTS: 5000
+          HTTP_PORTS: "5000"
