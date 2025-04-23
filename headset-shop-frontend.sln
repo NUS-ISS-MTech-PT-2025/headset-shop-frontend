@@ -1,0 +1,30 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeadsetShopFrontend", "HeadsetShopFrontend\HeadsetShopFrontend.csproj", "{B155F873-46CC-DCDF-8B4F-69D9CE07C687}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeadsetShopFrontend.Test.Unit", "HeadsetShopFrontend.Test.Unit\HeadsetShopFrontend.Test.Unit.csproj", "{1DA930AB-560A-DCEC-D0C4-27B6780898CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B155F873-46CC-DCDF-8B4F-69D9CE07C687}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B155F873-46CC-DCDF-8B4F-69D9CE07C687}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B155F873-46CC-DCDF-8B4F-69D9CE07C687}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B155F873-46CC-DCDF-8B4F-69D9CE07C687}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DA930AB-560A-DCEC-D0C4-27B6780898CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DA930AB-560A-DCEC-D0C4-27B6780898CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DA930AB-560A-DCEC-D0C4-27B6780898CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DA930AB-560A-DCEC-D0C4-27B6780898CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {236B5DA6-9AD9-4283-B23B-16ECFDC7E4BC}
+	EndGlobalSection
+EndGlobal
