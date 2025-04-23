@@ -6,5 +6,5 @@ services:
     ports:
       - "5000:5000"
     environment:
-      - ASPNETCORE_ENVIRONMENT: Development
-      - HTTP_PORTS: 5000
+      - ASPNETCORE_ENVIRONMENT=Development
+      - HTTP_PORTS=5000
