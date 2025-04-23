@@ -2,7 +2,7 @@ name: SonarQube
 
 on:
   push:
-    branches: [ main ]
+    branches: [ develop ]
 
 jobs:
   build:
@@ -30,7 +30,7 @@ jobs:
       - name: Begin SonarQube analysis
         run: |
           dotnet sonarscanner begin \
-            /k:"headset-shop-frontend" \
+            /k:"NUS-ISS-MTech-PT-2025_headset-shop-frontend" \
             /o:"nus-iss-mtech-pt-2025" \
             /d:sonar.token="${{ secrets.SONARQUBE_TOKEN }}" \
             /d:sonar.host.url="https://sonarcloud.io" \
