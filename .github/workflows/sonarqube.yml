@@ -1,4 +1,4 @@
-name: Build and Analyze with SonarQube
+name: SonarQube
 
 on:
   push:
@@ -32,7 +32,7 @@ jobs:
           dotnet sonarscanner begin \
             /k:"headset-shop-frontend" \
             /o:"nus-iss-mtech-pt-2025" \
-            /d:sonar.login="${{ secrets.SONARQUBE_TOKEN }}" \
+            /d:sonar.token="${{ secrets.SONARQUBE_TOKEN }}" \
             /d:sonar.host.url="https://sonarcloud.io" \
             /d:sonar.cs.opencover.reportsPaths=**/TestResults/coverage.opencover.xml
 
@@ -40,4 +40,4 @@ jobs:
         run: dotnet build --no-restore --configuration Release
 
       - name: End SonarQube analysis
-        run: dotnet sonarscanner end /d:sonar.login="${{ secrets.SONARQUBE_TOKEN }}"
+        run: dotnet sonarscanner end /d:sonar.token="${{ secrets.SONARQUBE_TOKEN }}"
